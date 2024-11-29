@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.main-container {
+    display: flex;
+    height: calc(100vh - 50px); /* højden minus navigationbar */
+}
+
+
+.entities-section {
+    flex: 2; /* Fylder 2/3 af siden */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* To kolonner */
+    gap: 10px; /* Afstand mellem entiteter */
+    overflow-y: auto; /* Kan scrolle */
+    overflow-x: hidden; /* Men kun verticalt */
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.details-section {
+    flex: 1; /* Fylder 1/3 af siden */
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.details-section img {
+    max-width: 80%; 
+    max-height: 60%; 
+    margin-bottom: 20px;
+    object-fit: contain; /* Anti stretch af billede */
+}
+
+.details-content {
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+}
+
+/* Entity Card */
+.entity {
+    background: #f4f4f4;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.entity:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+
+.entity.highlighted {
+    border: 2px solid #007bff;
+    background-color: #d0e9ff;
+}
