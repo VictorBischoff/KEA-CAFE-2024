@@ -1,3 +1,4 @@
+/*
 // Midlertidige test data
 const entities = [
     { id: 1, title: "Entitet 1", description: "Beskrivelse for Entitet 1 aaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaa aaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.", tags: ["Tag1", "Tag2"], image: "https://i.pinimg.com/736x/0a/96/8c/0a968c54c6156a814367f3961bfe8ff3.jpg" },
@@ -46,3 +47,4 @@ function highlightEntity(entity) {
 window.onload = () => {
     generateEntities();
 };
+*/

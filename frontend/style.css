@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,6 +9,7 @@ body {
     height: 100vh;
 }
 
+/* Navigation Bar */
 .navbar {
     display: flex;
     align-items: center;
@@ -46,25 +48,29 @@ body {
     border: 1px solid #ccc;
 }
 
+/* Main Container */
 .main-container {
-    display: flex;
-    height: calc(100vh - 50px); /* højden minus navigationbar */
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two columns: 2/3 for entities-section, 1/3 for details-section */
+    height: calc(100vh - 50px); /* height minus navbar */
 }
 
+/* Entities Section */
 .entities-section {
-    flex: 2; /* Fylder 2/3 af siden */
+    grid-column: 1 / 2; /* Span the first two columns */
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* To kolonner */
-    gap: 10px; /* Afstand mellem entiteter */
-    overflow-y: auto; /* Kan scrolle */
-    overflow-x: hidden; /* Men kun verticalt */
+    grid-template-columns: repeat(2, 1fr); /* Two columns within the entities-section */
+    grid-template-rows: repeat(2, 1fr); /* Two rows within the entities-section */
+    gap: 20px;
     padding: 10px;
     background-color: #f9f9f9;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: hidden; /* Disable vertical scrolling */
 }
 
+/* Details Section */
 .details-section {
-    flex: 1; /* Fylder 1/3 af siden */
+    grid-column: 2 / 3; /* Span the third column */
     padding: 20px;
     border-left: 1px solid #ddd;
     background-color: #fff;
@@ -123,6 +129,7 @@ body {
     background-color: #d0e9ff;
 }
 
+/* Form Section */
 .form-section {
     display: flex;
     justify-content: center;
@@ -177,6 +184,7 @@ body {
     background-color: #0056b3;
 }
 
+/* Login Form */
 .login-section {
     display: flex;
     justify-content: center;
@@ -220,6 +228,7 @@ body {
     background-color: #0056b3;
 }
 
+/* Cafe Form */
 .cafe-section {
     display: flex;
     justify-content: center;
@@ -274,8 +283,7 @@ body {
     background-color: #0056b3;
 }
 
-/* GRID FOR FRONTPAGE NEEDS FIXING ----------------------!------------------------!------------------*/
-
+/* Grid for Frontpage */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -317,3 +325,27 @@ body {
 .grid-item p {
     font-size: 16px;
 }
+
+/* background for cafecreation */
+#cafecreator {
+    background-image: url('https://www.shutterstock.com/image-vector/cafe-bar-graphic-black-white-600nw-2096585104.jpg');
+    background-size: cover; /* This makes the image cover the entire background */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    background-position: center; /* This centers the image */
+    width: 100%; /* Ensures the section takes up the full width */
+    height: 100%; /* Ensures the section takes up the full height */
+}
+/* background for usercreation */
+#usercreator {
+    background-image: url('https://img.freepik.com/free-vector/people-avatars-illustration_23-2148470804.jpg');
+    background-position: center; /* This centers the image */
+}
+
+#loginbg {
+    background-image: url('https://c8.alamy.com/comp/2FK073J/computer-and-account-login-and-password-olor-line-icon-pictogram-for-web-page-mobile-app-promo-ui-ux-gui-design-element-editable-stroke-2FK073J.jpg');
+    background-position: center; /* This centers the image */
+    background-size: cover; /* This makes the image cover the entire background */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    background-position: center; /* This centers the image */
+}
+
