@@ -1,5 +1,7 @@
 # Denne her ai genereret, da jeg ikke lige magtede at lave den selv
 
+docker-compose.yml
+
 # Dependencies
 node_modules/
 package-lock.json
