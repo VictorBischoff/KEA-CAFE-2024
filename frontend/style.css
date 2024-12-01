@@ -348,4 +348,10 @@ body {
     background-repeat: no-repeat; /* This prevents the image from repeating */
     background-position: center; /* This centers the image */
 }
+/* DESPERATE FRONTPAGE RESTYLING */
+.entities-section_index{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Two columns within the entities-section */
+    overflow-y: auto;
 
+}
