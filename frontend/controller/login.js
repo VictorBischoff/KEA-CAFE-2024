@@ -44,7 +44,6 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
 
     if (userData) {
         alert('Login successful!');
-        // Redirect or perform additional actions
-        window.location.href = 'index.html'; // Example redirect
+        window.location.href = 'dashboard.html';
     }
 });
