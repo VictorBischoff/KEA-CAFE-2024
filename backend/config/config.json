@@ -2,8 +2,9 @@
   "development": {
     "username": "admin",
     "password": "adminadmin",
-    "database": "database_development",
-    "host": "127.0.0.1:3316",
+    "database": "cafe_finder_db",
+    "host": "127.0.0.1",
+    "port": "3316",
     "dialect": "mysql"
   },
   "test": {

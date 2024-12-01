@@ -1,16 +1,34 @@
 module.exports = (sequelize, DataTypes) => {
-    const Favorite = sequelize.define('Favorite', {
+  const Favorite = sequelize.define(
+    'Favorite',
+    {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       notes: {
-        type: DataTypes.TEXT
-      }
-    }, {
-      timestamps: true
+        type: DataTypes.TEXT,
+      },
+    },
+    {
+      timestamps: true,
+    }
+  );
+
+  Favorite.associate = (models) => {
+    // Associate Favorite with Cafe
+    Favorite.belongsTo(models.Cafe, {
+      foreignKey: 'CafeId',
+      as: 'cafe',
     });
-  
-    return Favorite;
+
+    // Associate Favorite with User
+    Favorite.belongsTo(models.User, {
+      foreignKey: 'UserId',
+      as: 'user',
+    });
   };
+
+  return Favorite;
+};

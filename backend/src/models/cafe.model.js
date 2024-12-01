@@ -69,7 +69,8 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 'active'
       }
     }, {
-      timestamps: true
+      timestamps: true,
+      tableName: 'Cafes',
     });
   
     Cafe.associate = (models) => {

@@ -1,44 +1,50 @@
 module.exports = (sequelize, DataTypes) => {
-    const OpeningHours = sequelize.define('OpeningHours', {
+  const OpeningHours = sequelize.define(
+    'OpeningHours',
+    {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       dayOfWeek: {
         type: DataTypes.ENUM(
-          'monday', 
-          'tuesday', 
-          'wednesday', 
-          'thursday', 
-          'friday', 
-          'saturday', 
+          'monday',
+          'tuesday',
+          'wednesday',
+          'thursday',
+          'friday',
+          'saturday',
           'sunday'
         ),
-        allowNull: false
+        allowNull: false,
       },
       openTime: {
         type: DataTypes.TIME,
-        allowNull: false
+        allowNull: false,
       },
       closeTime: {
         type: DataTypes.TIME,
-        allowNull: false
+        allowNull: false,
       },
       isClosed: {
         type: DataTypes.BOOLEAN,
-        defaultValue: false
-      }
-    }, {
-      timestamps: true
+        defaultValue: false,
+      },
+    },
+    {
+      timestamps: true,
+    }
+  );
+
+  OpeningHours.associate = (models) => {
+    OpeningHours.belongsTo(models.Cafe, {
+      foreignKey: 'cafeId',
+      as: 'cafe',
+      onDelete: 'SET NULL', // Optional: Handle how rows are affected when a Cafe is deleted
+      onUpdate: 'CASCADE',
     });
-  
-    OpeningHours.associate = (models) => {
-      OpeningHours.belongsTo(models.Cafe, {
-        foreignKey: 'cafeId',
-        as: 'cafe'
-      });
-    };
-  
-    return OpeningHours;
   };
+
+  return OpeningHours;
+};
