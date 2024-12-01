@@ -26,6 +26,13 @@ module.exports = {
     version: 'v1'
   },
 
+  // CORS config
+  cors: {
+    whitelist: process.env.CORS_WHITELIST 
+      ? process.env.CORS_WHITELIST.split(',') 
+      : ['http://localhost:3000']
+  },
+
   // Logging
   logs: {
     level: process.env.LOG_LEVEL || 'debug'

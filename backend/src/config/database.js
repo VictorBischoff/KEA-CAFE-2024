@@ -1,5 +1,6 @@
 const { Sequelize } = require('sequelize');
 const config = require('./index');
+const Logger = require('./logger');
 
 class Database {
   constructor() {
@@ -11,13 +12,18 @@ class Database {
         host: config.db.host,
         port: config.db.port,
         dialect: config.db.dialect,
-        logging: config.env === 'development' ? console.log : false,
+        logging: (msg) => Logger.debug(msg),
         pool: {
           max: 5,
           min: 0,
           acquire: 30000,
           idle: 10000
-        }
+        },
+        dialectOptions: {
+          dateStrings: true,
+          typeCast: true
+        },
+        timezone: '+00:00'
       }
     );
   }
@@ -25,15 +31,25 @@ class Database {
   async connect() {
     try {
       await this.sequelize.authenticate();
-      console.log('Database connection established successfully.');
+      Logger.info('Database connection established successfully');
       
       if (config.env === 'development') {
         await this.sequelize.sync({ alter: true });
-        console.log('Database synced successfully.');
+        Logger.info('Database synchronized successfully');
       }
     } catch (error) {
-      console.error('Unable to connect to the database:', error);
-      process.exit(1);
+      Logger.error('Unable to connect to the database:', error);
+      throw error;
+    }
+  }
+
+  async disconnect() {
+    try {
+      await this.sequelize.close();
+      Logger.info('Database connection closed successfully');
+    } catch (error) {
+      Logger.error('Error closing database connection:', error);
+      throw error;
     }
   }
 

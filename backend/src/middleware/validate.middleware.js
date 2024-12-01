@@ -12,7 +12,7 @@ const validate = (schema) => {
       const errorMessage = error.details
         .map((detail) => detail.message)
         .join(', ');
-        
+      
       return next(new AppError(errorMessage, 400));
     }
 

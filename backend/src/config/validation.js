@@ -42,6 +42,62 @@ const userValidation = {
       .messages({
         'any.required': 'Password is required'
       })
+  }),
+
+  updateProfile: Joi.object({
+    username: Joi.string()
+      .min(3)
+      .max(50)
+      .messages({
+        'string.min': 'Username must be at least 3 characters long',
+        'string.max': 'Username cannot exceed 50 characters'
+      }),
+    email: Joi.string()
+      .email()
+      .messages({
+        'string.email': 'Please provide a valid email address'
+      })
+  }),
+
+  updateUser: Joi.object({
+    username: Joi.string()
+      .min(3)
+      .max(50)
+      .messages({
+        'string.min': 'Username must be at least 3 characters long',
+        'string.max': 'Username cannot exceed 50 characters'
+      }),
+    email: Joi.string()
+      .email()
+      .messages({
+        'string.email': 'Please provide a valid email address'
+      }),
+    role: Joi.string()
+      .valid('user', 'admin')
+      .messages({
+        'any.only': 'Invalid role value'
+      }),
+    isActive: Joi.boolean()
+  }),
+
+  changePassword: Joi.object({
+    currentPassword: Joi.string().required(),
+    newPassword: Joi.string()
+      .min(8)
+      .pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/)
+      .required()
+  }),
+
+  forgotPassword: Joi.object({
+    email: Joi.string().email().required()
+  }),
+
+  resetPassword: Joi.object({
+    token: Joi.string().required(),
+    newPassword: Joi.string()
+      .min(8)
+      .pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/)
+      .required()
   })
 };
 
@@ -122,6 +178,16 @@ const cafeValidation = {
     latitude: Joi.number().min(-90).max(90),
     longitude: Joi.number().min(-180).max(180),
     priceRange: Joi.string().valid('$', '$$', '$$$', '$$$$')
+  }),
+
+  amenities: Joi.object({
+    amenityIds: Joi.array()
+      .items(Joi.number().positive())
+      .required()
+      .messages({
+        'array.base': 'Amenities must be an array',
+        'any.required': 'Amenities are required'
+      })
   })
 };
 
@@ -160,6 +226,14 @@ const reviewValidation = {
       .messages({
         'any.only': 'Invalid power outlets value'
       })
+  }),
+
+  update: Joi.object({
+    rating: Joi.number().min(1).max(5),
+    content: Joi.string().max(500),
+    noise_level: Joi.string().valid('quiet', 'moderate', 'loud'),
+    wifi_quality: Joi.number().min(1).max(5),
+    power_outlets: Joi.string().valid('none', 'limited', 'plenty')
   })
 };
 
