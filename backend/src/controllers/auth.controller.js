@@ -56,7 +56,9 @@ exports.login = catchAsync(async (req, res) => {
   // Remove password from output
   user.password = undefined;
 
-  return ResponseHandler.success(res, { user, token });
+  return ResponseHandler.success(res, { token, 
+    user: { id: user.id, username: user.username, email: user.email }
+   });
 });
 
 exports.forgotPassword = catchAsync(async (req, res) => {
