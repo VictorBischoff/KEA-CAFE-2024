@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entitetsoversigt</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/frontend/public/index.html" class="nav-link">Home</a>
+            <a href="/frontend/public/cafe.html" class="nav-link">Cafes</a>
+            <a href="/frontend/public/users.html" class="nav-link">Users</a>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Søg..." class="search-bar">
+        </div>
+        <div class="nav-right">
+            <a href="/frontend/public/createuser.html" class="nav-link">Create User</a>
+            <a href="/frontend/public/createcafe.html" class="nav-link">Create Cafe</a>
+            <a href="/frontend/public/login.html" class="nav-link">Login</a>
+        </div>
+    </nav>
+    
+  <!-- Main container -->
+  <main class="main-container">
+    <div class="entities-section">
+        <div class="grid-container">
+            <!-- Welcome Section -->
+            <div class="grid-item welcome-section">
+                <h2>Welcome to KEA CAFE 2024</h2>
+                <p>Discover the best cafes around you. Explore, Favorite and Review</p>
+            </div>
+
+            <!-- Cafe Entity Section -->
+            <div class="grid-item cafe-entity" id="cafe-entity">
+                <h2>Featured Cafe</h2>
+                <img src="" alt="Cafe Image" id="cafe-image">
+                <h3 id="cafe-name"></h3>
+                <p id="cafe-description"></p>
+            </div>
+
+            <!-- User Entity Section -->
+            <div class="grid-item user-entity" id="user-entity">
+                <h2>Featured User</h2>
+                <img src="" alt="User Image" id="user-image">
+                <h3 id="user-name"></h3>
+                <p id="user-description"></p>
+            </div>
+
+            <!-- Description Section -->
+            <div class="grid-item description-section">
+                <h2>About Us</h2>
+                <p>Learn more about our mission to connect coffee lovers with the best cafes in town.</p>
+            </div>
+        </div>
+    </div>
+
+    <aside class="details-section">
+        <div class="details-content">
+            <!-- Details content goes here -->
+        </div>
+    </aside>
+</main>
+<script src="../controller/index-controller.js"></script>
+</body>
+</html>

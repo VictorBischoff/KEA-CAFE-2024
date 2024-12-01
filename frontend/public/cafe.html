@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entitetsoversigt</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-left">
-            <a href="/frontend/cafe.html" class="nav-link">Popular Cafés</a>
-            <a href="/frontend/index.html" class="nav-link">Favorites</a>
+            <a href="/frontend/public/index.html" class="nav-link">Home</a>
+            <a href="/frontend/public/cafe.html" class="nav-link">Cafes</a>
+            <a href="/frontend/public/users.html" class="nav-link">Users</a>
         </div>
         <div class="search-container">
             <input type="text" placeholder="Søg..." class="search-bar">
         </div>
         <div class="nav-right">
-            <a href="/frontend/users.html" class="nav-link">Users</a>
-            <a href="/frontend/login.html" class="nav-link">Login / Sign up</a>
+            <a href="/frontend/public/createuser.html" class="nav-link">Create User</a>
+            <a href="/frontend/public/createcafe.html" class="nav-link">Create Cafe</a>
+            <a href="/frontend/public/login.html" class="nav-link">Login</a>
         </div>
     </nav>
 
     <!-- Main container -->
     <main class="main-container">
         <div class="entities-section">
-            <!-- Inserting entities ind this div -->
+            <!-- Inserting entities in this div -->
         </div>
 
         <aside class="details-section">
@@ -36,6 +38,7 @@
         </aside>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../controller/cafe-controller.js"></script>
+    
 </body>
 </html>

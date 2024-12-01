@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/frontend/public/index.html" class="nav-link">Home</a>
+            <a href="/frontend/public/cafe.html" class="nav-link">Cafes</a>
+            <a href="/frontend/public/users.html" class="nav-link">Users</a>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Søg..." class="search-bar">
+        </div>
+        <div class="nav-right">
+            <a href="/frontend/public/createuser.html" class="nav-link">Create User</a>
+            <a href="/frontend/public/createcafe.html" class="nav-link">Create Cafe</a>
+            <a href="/frontend/public/login.html" class="nav-link">Login</a>
+        </div>
+    </nav>
+
+    <!-- Main container -->
+    <main class="main-container">
+        <div class="entities-section">
+            <!-- Inserting entities in this div -->
+        </div>
+        <aside class="details-section">
+            <div class="details-content">
+                <section class="form-section">
+                    <form id="login-form" class="form-container">
+                        <div class="form-group full-width">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <button type="submit">Login</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </aside>
+    </main>
+    <script src="user.controller.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

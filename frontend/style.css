@@ -46,12 +46,10 @@ body {
     border: 1px solid #ccc;
 }
 
-
 .main-container {
     display: flex;
     height: calc(100vh - 50px); /* højden minus navigationbar */
 }
-
 
 .entities-section {
     flex: 2; /* Fylder 2/3 af siden */
@@ -91,6 +89,19 @@ body {
     width: 100%;
 }
 
+.favorite-icon {
+    position: absolute;
+    top: 75px;
+    right: 25px;
+    font-size: 100px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.favorite-icon.favorited {
+    color: gold;
+}
+
 /* Entity Card */
 .entity {
     background: #f4f4f4;
@@ -110,4 +121,199 @@ body {
 .entity.highlighted {
     border: 2px solid #007bff;
     background-color: #d0e9ff;
+}
+
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* full height parent */
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Add some space between the form elements */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-container label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* full height of parent */
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add some space between the form elements */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#login-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#login-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#login-form button:hover {
+    background-color: #0056b3;
+}
+
+.cafe-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#cafe-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Add some space between the form elements */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#cafe-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+#cafe-form .form-group.full-width {
+    grid-column: span 2;
+}
+
+#cafe-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#cafe-form input,
+#cafe-form textarea,
+#cafe-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#cafe-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#cafe-form button:hover {
+    background-color: #0056b3;
+}
+
+/* GRID FOR FRONTPAGE NEEDS FIXING ----------------------!------------------------!------------------*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    height: 100%;
+}
+
+.grid-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.grid-item img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.grid-item h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.grid-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.grid-item p {
+    font-size: 16px;
 }
